@@ -1,0 +1,20 @@
+.body{
+    height: 100%;
+    margin: 30px;
+}
+
+.form{
+flex-direction: row;
+display: flex;
+}
+
+label{
+    margin-left: 10px;
+}
+
+.actions{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
