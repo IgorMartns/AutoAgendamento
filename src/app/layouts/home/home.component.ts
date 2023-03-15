@@ -9,12 +9,18 @@ import { AgendamentoComponent } from '../agendamento/agendamento.component';
 })
 export class HomeComponent {
 
+
   constructor(public dialog: MatDialog) {}
 
   openModal(){
     const dialogRes = this.dialog.open(AgendamentoComponent, {
       width:'auto',
       height:'auto'
+    })
+    dialogRes.disableClose = true
+    dialogRes.afterClosed().subscribe(res =>{
+      console.log(res);
+      
     })
   }
 

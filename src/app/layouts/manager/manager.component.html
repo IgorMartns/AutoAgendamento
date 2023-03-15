@@ -9,18 +9,47 @@
                 fill="#fff"></path>
         </g>
     </svg>
-    <div class="buttons">
-        <button mat-button (click)="openModal()">
+    <div class="buttons" *ngIf="logged==true">
+        <button mat-button>
             NOVO AGENDAMENTO
         </button>
+
+        &nbsp; &nbsp;
+        <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
+            HISTÓRICO
+        </button>
+
         &nbsp; | &nbsp;
-        <button mat-button routerLink="/manager" class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
+            LOGIN
+        </button>
+
+        &nbsp; | &nbsp;
+        <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
+            SAIR
+        </button>
+
+    </div>
+
+    <div class="buttons" *ngIf="logged==false">
+        <button mat-button>
+            NOVO AGENDAMENTO
+        </button>
+
+        &nbsp; | &nbsp;
+        <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
             LOGIN
         </button>
     </div>
 </mat-toolbar>
 
-<div class="body">
-    <h2>Agendamento online: É rápido e fácil</h2>
-    <button mat-flat-button color="primary" (click)="openModal()">AGENDE SEUS EXAMES</button>
-</div>
+<mat-tab-group backgroundColor="primary" mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="Convênios">
+        <h2>Convênios</h2>
+    </mat-tab>
+    <mat-tab label="Exames e consultas"></mat-tab>
+    <mat-tab label="Horários">
+        <h2>Horários</h2>
+    </mat-tab>
+    <mat-tab label="Resumo"></mat-tab>
+</mat-tab-group>

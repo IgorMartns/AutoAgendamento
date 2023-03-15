@@ -15,14 +15,16 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatInputModule } from '@angular/material/input'
 import { MatRadioModule } from '@angular/material/radio'
-
-
+import { FormsModule } from '@angular/forms';
+import { ManagerComponent } from './layouts/manager/manager.component'
+import { MatTabsModule } from '@angular/material/tabs'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AgendamentoComponent
+    AgendamentoComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,9 @@ import { MatRadioModule } from '@angular/material/radio'
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    FormsModule,
+    MatTabsModule
   ],
   entryComponents:[AgendamentoComponent],
   providers: [MatDatepickerModule],

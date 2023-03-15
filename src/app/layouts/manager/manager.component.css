@@ -1,0 +1,15 @@
+.buttons {
+    position: absolute;
+    margin-right: 50px;
+    right: 0;
+}
+
+.logo {
+    height: 40px;
+    width: 60px;
+    border: 1px solid #fff;
+}
+
+::ng-deep .mat-mdc-tab-header .mat-mdc-tab-labels {
+    margin-bottom: 17px;
+}

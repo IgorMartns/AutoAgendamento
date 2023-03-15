@@ -1,3 +1,4 @@
+import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './agendamento.component.html',
   styleUrls: ['./agendamento.component.css']
 })
-export class AgendamentoComponent {
 
+export class AgendamentoComponent implements OnInit {
+  dataNasc: any
+  gender: string
+  constructor() {
+
+  }
+  ngOnInit(): void {
+
+  }
 }
