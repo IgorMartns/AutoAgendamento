@@ -18,6 +18,10 @@ import { MatRadioModule } from '@angular/material/radio'
 import { FormsModule } from '@angular/forms';
 import { ManagerComponent } from './layouts/manager/manager.component'
 import { MatTabsModule } from '@angular/material/tabs'
+import { MatSelectModule } from '@angular/material/select'
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
+import { ReactiveFormsModule } from '@angular/forms'
+
 
 @NgModule({
   declarations: [
@@ -40,7 +44,10 @@ import { MatTabsModule } from '@angular/material/tabs'
     MatInputModule,
     MatRadioModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   entryComponents:[AgendamentoComponent],
   providers: [MatDatepickerModule],

@@ -45,7 +45,17 @@
 
 <mat-tab-group backgroundColor="primary" mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab label="Convênios">
-        <h2>Convênios</h2>
+
+        <mat-form-field appearance="fill">
+            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Convênios">
+            <mat-autocomplete autoActiveFirstOpition #auto="matAutocomplete"
+                (optionSelected)="changeSelect($event.option.value)">
+                <mat-option *ngFor="let option of conveniosFilter | async" [value]="option.nome">
+                    {{option.nome}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
     </mat-tab>
     <mat-tab label="Exames e consultas"></mat-tab>
     <mat-tab label="Horários">
