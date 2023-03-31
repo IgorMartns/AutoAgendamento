@@ -45,17 +45,42 @@
 
 <mat-tab-group backgroundColor="primary" mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab label="Convênios">
+        <div class="content">
+            <div class="hiperLink">
+                <a href="">Acesse sua conta</a>
+                <h4>para facilitar seu agendamento</h4>
+            </div>
+            <div class="input">
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"
+                        placeholder="Convênios">
+                    <mat-autocomplete autoActiveFirstOpition #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of conveniosFilter | async" [value]="option.nome">
+                            {{option.nome}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" placeholder="Convênios">
-            <mat-autocomplete autoActiveFirstOpition #auto="matAutocomplete"
-                (optionSelected)="changeSelect($event.option.value)">
-                <mat-option *ngFor="let option of conveniosFilter | async" [value]="option.nome">
-                    {{option.nome}}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput [(ngModel)]="myPlano" [matAutocomplete]="planoAuto" placeholder="Plano">
+                    <mat-autocomplete #planoAuto="matAutocomplete">
+                        <mat-option *ngFor="let item of planos"  [value]="item.nome">
+                            {{item.nome}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button [disabled]="myPlano == '' " color="primary" class="example-icon">
+                    CONTINUAR
+                </button>
+                <br>
+                <br>
+                <br>
+                <button mat-raised-button color="primary" class="example-icon">
+                    CONTINUAR SEM CONVÊNIO
+                </button>
+            </div>
+        </div>
     </mat-tab>
     <mat-tab label="Exames e consultas"></mat-tab>
     <mat-tab label="Horários">

@@ -13,3 +13,35 @@
 ::ng-deep .mat-mdc-tab-header .mat-mdc-tab-labels {
     margin-bottom: 17px;
 }
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 700px;
+}
+
+.hiperLink {
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.input {
+    width: 30%;
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input mat-form-field {
+    width: 80%;
+}
+
+.input button {
+    padding: 22px;
+    border-radius: 5px;
+}
